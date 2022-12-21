@@ -9,6 +9,7 @@
     "watch": "rollup -c -w"
   },
   "author": "Karl Taylor <karl@studio206.dev>",
+  "contributors": [],
   "bugs": {
     "url": "https://github.com/studio-206/create-sanity-field/issues"
   },
