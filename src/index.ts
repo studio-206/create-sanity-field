@@ -1,9 +1,10 @@
-import CreateSanityFieldCore from "./CreateSanityFieldCore";
+import CreateSanityFieldCore, { CreateSanityFieldCoreOptions } from "./CreateSanityFieldCore";
 
 /**
  * The main createSanityField to pass in config. I.E Your own dictionary of key/value pairs.
  */
-const createSanityField = (args?: any[]) => new CreateSanityFieldCore(args);
+const createSanityField = (args: CreateSanityFieldCoreOptions = {}) =>
+  new CreateSanityFieldCore(args);
 
 /**
  * Return the default field function with no dictionary arguments for quick usage.
