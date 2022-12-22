@@ -13,7 +13,16 @@ describe("Default Tests", () => {
     const result = field("title");
     expect(result).toStrictEqual({
       name: "title",
-      title: "title",
+      title: "Title",
+      type: "string",
+    });
+  });
+
+  test("It takes a longer field name and returns the correct title", () => {
+    const result = field("longFieldName");
+    expect(result).toStrictEqual({
+      name: "longFieldName",
+      title: "Long Field Name",
       type: "string",
     });
   });
