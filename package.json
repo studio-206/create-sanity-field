@@ -1,12 +1,13 @@
 {
-  "name": "create-sanity-field",
+  "name": "@studio206/create-sanity-field",
   "version": "0.0.1",
   "description": "A sanity field creation tool",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
     "build": "rollup -c",
-    "watch": "rollup -c -w"
+    "watch": "rollup -c -w",
+    "test": "vitest"
   },
   "author": "Karl Taylor <karl@studio206.dev>",
   "contributors": [],
@@ -21,6 +22,7 @@
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-typescript": "^1.0.1",
     "tslib": "^2.4.1",
-    "typescript": "^4.9.4"
+    "typescript": "^4.9.4",
+    "vitest": "^0.26.2"
   }
 }
