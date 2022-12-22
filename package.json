@@ -7,7 +7,7 @@
   "scripts": {
     "build": "rollup -c",
     "watch": "rollup -c -w",
-    "test": "vitest"
+    "test": "vitest --reporter verbose"
   },
   "author": "Karl Taylor <karl@studio206.dev>",
   "contributors": [],
@@ -17,6 +17,7 @@
   "type": "module",
   "homepage": "https://github.com/studio-206/create-sanity-field#readme",
   "devDependencies": {
+    "@vitest/ui": "^0.26.2",
     "rollup": "^3.7.5",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0",

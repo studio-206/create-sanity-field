@@ -2,13 +2,7 @@ import { describe, expect, test } from "vitest";
 
 import { field as defaultField, createSanityField } from "../src";
 
-const { field } = createSanityField({
-  typeDictionary: {
-    authorName: "string",
-    longFieldName: "string",
-    email: "email",
-  },
-});
+const { field } = createSanityField();
 
 describe("Default Tests", () => {
   test("Ensure defaultField is available", () => {
@@ -39,17 +33,4 @@ describe("Default Tests", () => {
       type: "string",
     });
   });
-
-  test("It works if I am using a value from the typeDictionary", () => {
-    const result = field("authorName");
-    expect(result).toStrictEqual({
-      name: "authorName",
-      title: "Author Name",
-      type: "string",
-    });
-  });
-
-  test.todo(
-    "It should throw an error if we try and override with a type that is not in the dictionary"
-  );
 });
