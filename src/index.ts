@@ -1,5 +1,5 @@
-const example = () => {
-  console.log("hello");
-};
+import CreateSanityFieldCore from "./CreateSanityFieldCore";
 
-export default example;
+const createSanityField = (args?: any[]) => new CreateSanityFieldCore(args);
+
+export { createSanityField };

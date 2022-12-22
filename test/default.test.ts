@@ -1,9 +1,16 @@
-import { describe, test } from "vitest";
+import { describe, expect, test } from "vitest";
 
-import field from "../src";
+import { createSanityField } from "../src";
+
+const { field } = createSanityField();
 
 describe("Default Tests", () => {
   test("It works", () => {
-    field();
+    const result = field("title");
+    expect(result).toStrictEqual({
+      name: "title",
+      title: "title",
+      type: "string",
+    });
   });
 });
