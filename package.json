@@ -1,6 +1,6 @@
 {
   "name": "@studio206/create-sanity-field",
-  "version": "0.0.1",
+  "version": "1.0.0-rc.1",
   "description": "A sanity field creation tool",
   "main": "dist/bundle.js",
   "license": "MIT",
@@ -10,7 +10,12 @@
     "test": "vitest --reporter verbose"
   },
   "author": "Karl Taylor <karl@studio206.dev>",
-  "contributors": [],
+  "contributors": [
+    {
+      "name": "Sam Scott",
+      "email": "sam@studio206.dev"
+    }
+  ],
   "bugs": {
     "url": "https://github.com/studio-206/create-sanity-field/issues"
   },
