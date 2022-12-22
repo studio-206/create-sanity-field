@@ -18,7 +18,7 @@ describe("Default Tests", () => {
     });
   });
 
-  test("It will error if I don't pass in a type that is in the default types", () => {
+  test("Error if type not specified and type not in default", () => {
     expect(() => {
       field("notInDictionary");
     }).toThrowError();
