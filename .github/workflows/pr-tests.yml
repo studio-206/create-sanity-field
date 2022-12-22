@@ -1,0 +1,21 @@
+name: Unit Tests
+
+on: [pull_request]
+
+jobs:
+  tests:
+    if: github.repository == 'studio-206/create-sanity-field'
+
+    runs-on: macos-12
+
+    strategy:
+      matrix:
+        node-version: [18.x, 16.x]
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+      - name: install
+      - run: npm install
+      - name: run tests
+      - run: npm run test
