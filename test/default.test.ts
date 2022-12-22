@@ -18,8 +18,15 @@ describe("Default Tests", () => {
     });
   });
 
-  test("It takes a longer field name and returns the correct title", () => {
-    const result = field("longFieldName");
+  test("It will error if I don't pass in a type that is in the default types", () => {
+    expect(() => {
+      field("notInDictionary");
+    }).toThrowError();
+  });
+
+  test("It takes a longer field name and returns the correct title with a fieldType passed", () => {
+    const result = field("longFieldName", "string");
+
     expect(result).toStrictEqual({
       name: "longFieldName",
       title: "Long Field Name",
