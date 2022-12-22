@@ -6,6 +6,7 @@ const { field } = createSanityField({
   typeDictionary: {
     authorName: "string",
     longFieldName: "string",
+    email: "email",
   },
 });
 

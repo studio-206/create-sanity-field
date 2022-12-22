@@ -2,7 +2,7 @@ import { capitalCase } from "change-case";
 import { SanityFieldTypes, typeDefaults } from "./typeDefaults";
 
 export type CreateSanityFieldCoreOptions = {
-  typeDictionary?: Record<string, keyof typeof SanityFieldTypes>;
+  typeDictionary?: Record<string, keyof typeof SanityFieldTypes | string>;
 };
 
 class CreateSanityFieldCore {
