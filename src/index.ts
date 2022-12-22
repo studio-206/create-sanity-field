@@ -9,6 +9,7 @@ const createSanityField = (args: CreateSanityFieldCoreOptions = {}) =>
 /**
  * Return the default field function with no dictionary arguments for quick usage.
  */
-const field = (...args: any) => createSanityField().field(args);
+const field = (fieldName: string, fieldType?: string) =>
+  createSanityField().field(fieldName, fieldType);
 
 export { field, createSanityField };
