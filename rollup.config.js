@@ -6,7 +6,7 @@ export default {
   input: "src/index.ts",
   output: {
     file: "dist/bundle.js",
-    format: "umd",
+    format: "cjs",
   },
   plugins: [resolve(), commonjs(), typescript()],
 };
