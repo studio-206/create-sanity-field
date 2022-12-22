@@ -1,5 +1,6 @@
-import { field as defaultField, createSanityField } from "../src";
 import { describe, expect, test } from "vitest";
+
+import { field as defaultField, createSanityField } from "../src";
 
 const { field } = createSanityField();
 
@@ -22,7 +23,7 @@ describe("Default Tests", () => {
     expect(result).toStrictEqual({
       name: "longFieldName",
       title: "Long Field Name",
-      type: "stringz",
+      type: "string",
     });
   });
 });
