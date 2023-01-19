@@ -1,19 +1,13 @@
-export enum SanityFieldTypes {
-  boolean = "boolean",
-  date = "date",
-  image = "image",
-  slug = "slug",
-  string = "string",
-  text = "text",
-  url = "url",
-}
+export type SanityFieldTypes = "boolean" | "date" | "image" | "slug" | "string" | "text" | "url";
 
-type DefaultNameKeys = "active" | "date" | "description" | "title" | "name";
+export type DefaultNameKeys = "active" | "date" | "description" | "title" | "name";
 
 export const typeDefaults: Record<DefaultNameKeys, SanityFieldTypes> = {
-  active: SanityFieldTypes.boolean,
-  date: SanityFieldTypes.date,
-  description: SanityFieldTypes.text,
-  name: SanityFieldTypes.string,
-  title: SanityFieldTypes.string,
+  active: "boolean",
+  date: "date",
+  description: "image",
+  name: "text",
+  title: "text",
 };
+
+console.log(typeDefaults);
