@@ -1,12 +1,12 @@
+import { DefaultNameKeys, SanityFieldTypes, typeDefaults } from "./typeDefaults";
 import { capitalCase } from "change-case";
-import { SanityFieldTypes, typeDefaults } from "./typeDefaults";
 
 export type CreateSanityFieldCoreOptions = {
-  typeDictionary?: Record<string, keyof typeof SanityFieldTypes | string>;
+  typeDictionary?: Record<string, SanityFieldTypes>;
 };
 
-class CreateSanityFieldCore {
-  constructor(options: CreateSanityFieldCoreOptions) {
+class CreateSanityFieldCore<Config extends CreateSanityFieldCoreOptions> {
+  constructor(options: Config) {
     this.typeDictionary = options.typeDictionary;
     this.typeDefaults = typeDefaults;
   }
@@ -14,13 +14,18 @@ class CreateSanityFieldCore {
   typeDictionary;
   typeDefaults;
 
-  field = <TFieldName extends string>(fieldName: TFieldName, fieldType?: string) => {
+  field = (
+    fieldName: keyof Config["typeDictionary"] & DefaultNameKeys,
+    fieldType?: SanityFieldTypes
+  ) => {
     const makeTypes = {
       ...typeDefaults,
       ...this.typeDictionary,
-    } as Record<string, string>;
+    };
 
-    const getType = makeTypes[fieldName] as string;
+    const getType = makeTypes[fieldName];
+
+    getType;
 
     if (!getType && !fieldType) {
       throw new Error(
