@@ -25,7 +25,7 @@ If the `type` does _not_ exist within `src/typeDefaults.ts`, you will have to pa
 import { field } from "@studio206/create-sanity-field";
 
 field("fubar"); // ❌
-// Error: Undefined type for field name: wtaf. Please add type or add to dictionary
+// Error: Undefined type for field name: fubar. Please add type or add to dictionary
 
 field("fubar", "boolean"); // ✅
 // {
