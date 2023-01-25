@@ -37,7 +37,7 @@ field("fubar", "boolean"); // ✅
 
 ### Configure createSanityField and add your own type definitions 🪄 ⭐️
 
-This is were a solid attempt at typesafety comes into play.
+This is where a solid attempt at typesafety comes into play.
 
 Import `createSanityField` from `@studio206/create-sanity-field`.
 
