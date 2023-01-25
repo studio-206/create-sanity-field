@@ -64,3 +64,8 @@ field("authorName");
 //   type: 'string'
 // }
 ```
+
+You will also get an intellisense member list:
+
+<img width="384" alt="Screenshot 2023-01-25 at 22 23 10" src="https://user-images.githubusercontent.com/6763109/214706643-d339baa7-f40a-4183-ae17-97666f87de78.png">
+
