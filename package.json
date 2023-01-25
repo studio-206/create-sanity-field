@@ -1,6 +1,6 @@
 {
   "name": "@studio206/create-sanity-field",
-  "version": "1.0.0-rc.1",
+  "version": "1.0.0-rc.2",
   "description": "A sanity field creation tool",
   "types": "dist/types/index.d.ts",
   "main": "dist/bundle.js",
