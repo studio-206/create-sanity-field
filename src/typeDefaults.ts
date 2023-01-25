@@ -8,9 +8,7 @@ export enum SanityFieldTypes {
   url = "url",
 }
 
-type DefaultNameKeys = "active" | "date" | "description" | "title" | "name";
-
-export const typeDefaults: Record<DefaultNameKeys, SanityFieldTypes> = {
+export const typeDefaults = {
   active: SanityFieldTypes.boolean,
   date: SanityFieldTypes.date,
   description: SanityFieldTypes.text,

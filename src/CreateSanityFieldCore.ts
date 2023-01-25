@@ -1,37 +1,39 @@
 import { capitalCase } from "change-case";
-import { SanityFieldTypes, typeDefaults } from "./typeDefaults";
+import { typeDefaults } from "./typeDefaults";
 
-export type CreateSanityFieldCoreOptions = {
-  typeDictionary?: Record<string, keyof typeof SanityFieldTypes | string>;
-};
+export type AllTypeDefinitions<T> = T & typeof typeDefaults;
 
-class CreateSanityFieldCore {
-  constructor(options: CreateSanityFieldCoreOptions) {
-    this.typeDictionary = options.typeDictionary;
-    this.typeDefaults = typeDefaults;
+class CreateSanityFieldCore<Config extends { typeDefinitions: Config["typeDefinitions"] }> {
+  constructor(config?: Config) {
+    this.allFieldTypes = {
+      ...typeDefaults,
+      ...(config ? config.typeDefinitions : {}),
+    };
   }
 
-  typeDictionary;
-  typeDefaults;
+  allFieldTypes: AllTypeDefinitions<Config["typeDefinitions"]>;
 
-  field = <TFieldName extends string>(fieldName: TFieldName, fieldType?: string) => {
-    const makeTypes = {
-      ...typeDefaults,
-      ...this.typeDictionary,
-    } as Record<string, string>;
+  field = <
+    TFieldName extends keyof AllTypeDefinitions<Config["typeDefinitions"]>,
+    TFieldType extends string
+  >(
+    fieldName: TFieldName,
+    fieldType?: TFieldType
+  ) => {
+    const type = this.allFieldTypes[fieldName];
 
-    const getType = makeTypes[fieldName] as string;
-
-    if (!getType && !fieldType) {
+    if (!type && !fieldType) {
       throw new Error(
-        `Undefined type for field name: ${fieldName}. Please add type or add to dictionary`
+        `Undefined type for field name: ${
+          fieldName as string
+        }. Please add type or add to dictionary`
       );
     }
 
     return {
       name: fieldName,
-      title: capitalCase(fieldName),
-      type: fieldType || getType,
+      title: capitalCase(String(fieldName)),
+      type: fieldType || type,
     };
   };
 }
