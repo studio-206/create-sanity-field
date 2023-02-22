@@ -1,5 +1,4 @@
 import CreateSanityFieldCore from "./CreateSanityFieldCore";
-import { typeDefaults } from "./typeDefaults";
 
 /**
  * The main createSanityField to pass in config. I.E Your own dictionary of key/value pairs.
