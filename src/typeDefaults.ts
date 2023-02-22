@@ -13,5 +13,6 @@ export const typeDefaults = {
   date: SanityFieldTypes.date,
   description: SanityFieldTypes.text,
   name: SanityFieldTypes.string,
+  slug: SanityFieldTypes.slug,
   title: SanityFieldTypes.string,
 };
