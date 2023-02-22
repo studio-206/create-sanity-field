@@ -8,7 +8,9 @@
   "scripts": {
     "build": "rm -rf dist && rollup -c",
     "watch": "rollup -c -w",
-    "test": "vitest --reporter verbose"
+    "test": "vitest --reporter verbose",
+    "prepare": "yarn build",
+    "publish": "npm publish --access public"
   },
   "author": "Karl Taylor <karl@studio206.dev>",
   "contributors": [
